@@ -43,6 +43,11 @@ templates/
 checklists/
 ```
 
+## Documentação da Fila Virtual Transparente
+
+A arquitetura cross-repository da solução está documentada em
+[docs/architecture/README.md](docs/architecture/README.md).
+
 ### agents/
 
 Specialized AI engineering roles.
