@@ -1,32 +1,33 @@
-# Push Branch
+# Branch Push Workflow
 
-## Objective
+Push the current local branch to the remote repository.
 
-Publish the current branch safely and establish remote tracking.
+## Pre-Push Validation
 
-## Procedure
+Before pushing:
 
-1. Confirm the current branch is not the protected base branch.
-2. Inspect local status and recent commits.
-3. Verify required checks have passed.
-4. Fetch remote references and identify divergence.
-5. Push while setting the upstream:
+1. Verify the current branch name.
+2. Confirm that the branch is not `main`, `master`, `develop`, or any protected base branch.
+3. Check that the working tree is clean.
+4. Confirm that all intended changes are already committed.
+5. Push the current branch to `origin`.
 
-   ```bash
-   git push -u origin HEAD
-   ```
+## First Push
 
-6. Confirm the remote branch and commit SHA.
+If the branch does not yet exist on the remote, set the upstream tracking branch using:
 
-## Guardrails
+```bash
+git push -u origin <current-branch>
+```
 
-- Do not force-push shared branches by default.
-- If history rewriting is explicitly required, use `--force-with-lease`.
-- Do not publish secrets, debug artifacts, or unintended commits.
-- Stop if the remote branch has unexpected commits.
+## Subsequent Pushes
 
-## Output
+If the branch already exists on the remote, use:
 
-- Updated remote branch
-- Configured upstream tracking
-- Confirmed remote commit
+```bash
+git push
+```
+
+## Important
+
+Do not force push unless I explicitly request it.

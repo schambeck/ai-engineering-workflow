@@ -1,47 +1,65 @@
-# Create Branch
+# Branch Creation Workflow
 
-## Objective
+Before starting the implementation:
 
-Create a focused branch from an up-to-date base without disturbing local work.
+## Preparation
 
-## Inputs
+1. Sync with the latest `main` branch.
+2. Create a new branch from `main`.
+3. Generate a Conventional Commits–style branch name that best describes the requested work.
 
-- Base branch, normally `main`
-- Work type and concise description
-- Issue identifier, when available
+## Branch Naming Format
 
-## Procedure
-
-1. Check repository status and preserve unrelated local changes.
-2. Fetch remote references.
-3. Confirm the selected base branch and update it safely.
-4. Create a branch using:
-
-   ```text
-   <type>/<issue>-<short-description>
-   ```
-
-   Common types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
-
-5. Verify the branch name and starting commit.
-
-## Example
-
-```bash
-git fetch origin
-git switch main
-git pull --ff-only
-git switch -c feat/123-add-queue-status
+```text
+<type>/<short-kebab-case-description>
 ```
 
-## Guardrails
+## Branch Type Selection
 
-- Do not discard or overwrite uncommitted work.
-- Do not branch from a stale or unintended commit.
-- Keep one coherent objective per branch.
+Use the most appropriate type:
 
-## Output
+* `feat`
+* `fix`
+* `refactor`
+* `perf`
+* `test`
+* `docs`
+* `chore`
 
-- New local branch
-- Confirmed base commit
-- Clean or intentionally dirty working-tree status
+## Naming Requirements
+
+The branch name should be:
+
+* concise;
+* descriptive;
+* aligned with the primary objective of the changes;
+* written in kebab-case.
+
+## Examples
+
+```text
+refactor/migrate-jdbcclient-to-jpa
+```
+
+```text
+refactor/replace-jdbcclient-with-spring-data-jpa
+```
+
+```text
+feat/add-querydsl-support
+```
+
+```text
+fix/queue-entry-locking
+```
+
+## Approval Workflow
+
+Before creating a branch:
+
+* display the proposed branch name;
+* briefly explain why that branch name was chosen;
+* wait for my explicit approval.
+
+## Important
+Do not execute `git checkout -b ` until I explicitly approve the proposed branch name.
