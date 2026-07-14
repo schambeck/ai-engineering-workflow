@@ -38,35 +38,53 @@ ai-engineering-workflows/
 
 agents/
 checklists/
+prompts/
 skills/
 templates/
 workflows/
 ```
 
+Each folder has its own `README.md` with the full file list, design principles, and typical usage order — the sections below are a summary.
+
 ### agents/
 
-Specialized AI engineering roles.
-
-Examples:
+Specialized AI engineering roles, used as plain role prompts. See [agents/README.md](agents/README.md).
 
 ```
 agents/
-├── architect.md
-├── backend-developer.md
-├── test-engineer.md
-├── code-reviewer.md
-├── security-reviewer.md
-├── performance-engineer.md
-├── docs-engineer.md
+├── 01-architect.md
+├── 02-backend-developer.md
+├── 03-code-reviewer.md
+├── 04-docs-engineer.md
+├── 05-performance-engineer.md
+├── 06-security-reviewer.md
+└── 07-test-engineer.md
+```
+
+---
+
+### skills/
+
+The same engineering roles packaged as Claude Skills (`SKILL.md` with frontmatter) for automatic, tool-native invocation, plus an orchestrator that aggregates review findings into a merge decision. See [skills/README.md](skills/README.md).
+
+```
+skills/
+├── 01a-feature-analysis-architect/
+├── 01b-healthcare-queue-architect/
+├── 02-senior-java-backend-engineer/
+├── 03-senior-qa-automation-engineer/
+├── 04a-staff-backend-code-reviewer/
+├── 04b-staff-application-security-risk-analyzer/
+├── 04c-staff-performance-bottleneck-analyzer/
+├── 05-staff-documentation-impact-analyzer/
+└── 06-ai-pr-gate-orchestrator/
 ```
 
 ---
 
 ### workflows/
 
-Reusable engineering workflows.
-
-Examples:
+Reusable engineering workflows covering the git and release lifecycle, with explicit approval gates before irreversible actions. See [workflows/README.md](workflows/README.md).
 
 ```
 workflows/
@@ -83,9 +101,7 @@ workflows/
 
 ### templates/
 
-Reusable templates.
-
-Examples:
+Reusable document templates. See [templates/README.md](templates/README.md).
 
 ```
 templates/
@@ -98,9 +114,7 @@ templates/
 
 ### checklists/
 
-Engineering checklists.
-
-Examples:
+Verification checklists used as a gate at each delivery stage. See [checklists/README.md](checklists/README.md).
 
 ```
 checklists/
@@ -108,6 +122,20 @@ checklists/
 ├── pull-request.md
 ├── release.md
 └── production-readiness.md
+```
+
+---
+
+### prompts/
+
+One-off, project-specific prompts that don't fit the reusable folders above. See [prompts/README.md](prompts/README.md).
+
+```
+prompts/
+├── api-gateway.md
+├── arch-doc.md
+├── cleanarch-ddd-edd.md
+└── create-readme.md
 ```
 
 ---
