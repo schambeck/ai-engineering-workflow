@@ -1,4 +1,4 @@
-# AI Engineering Workflows
+# AI Supervisor Platform
 
 A curated collection of reusable AI engineering workflows, agents, templates, and project specifications for software development.
 
