@@ -37,16 +37,11 @@ The workflows are designed to be AI-agnostic and can be used with:
 ai-engineering-workflows/
 
 agents/
-workflows/
-specifications/
-templates/
 checklists/
+skills/
+templates/
+workflows/
 ```
-
-## Documentação da Fila Virtual Transparente
-
-A arquitetura cross-repository da solução está documentada em
-[docs/architecture/README.md](docs/architecture/README.md).
 
 ### agents/
 
@@ -82,22 +77,6 @@ workflows/
 ├── review-pr.md
 ├── resolve-review-comments.md
 └── release.md
-```
-
----
-
-### specifications/
-
-Project-specific implementation contracts.
-
-Examples:
-
-```
-specifications/
-└── api-fila-virtual-transparente/
-    ├── jdbcclient-to-jpa-refactoring.md
-    ├── queue-flow.md
-    └── whatsapp-provider.md
 ```
 
 ---
